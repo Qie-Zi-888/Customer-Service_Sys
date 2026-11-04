@@ -1,0 +1,23 @@
+# Python版智能客服助手项目依赖
+
+# Web框架
+Flask==2.3.3
+
+# HTTP请求库
+requests==2.31.0
+
+# 环境变量管理
+python-dotenv==1.0.0
+
+# JSON处理增强
+# orjson==3.9.10  # 注释掉orjson，使用Python标准json库
+
+# 日期时间处理
+python-dateutil==2.8.2
+
+# WSGI服务器（生产环境）
+gunicorn==21.2.0
+
+# 开发工具
+flake8==6.1.0
+black==23.11.0

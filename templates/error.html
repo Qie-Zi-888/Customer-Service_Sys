@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}系统错误 - 智能客服助手{% endblock %}
+
+{% block content %}
+<!-- 错误页面 -->
+<div class="min-h-96 flex items-center justify-center">
+    <div class="max-w-md w-full">
+        <div class="text-center">
+            <!-- 错误图标 -->
+            <div class="mx-auto w-24 h-24 bg-red-100 rounded-full flex items-center justify-center mb-6">
+                <svg class="w-12 h-12 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                </svg>
+            </div>
+            
+            <!-- 错误标题 -->
+            <h1 class="text-2xl font-bold text-gray-900 mb-4">系统出现错误</h1>
+            
+            <!-- 错误信息 -->
+            <div class="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+                <p class="text-red-700 text-sm">
+                    {{ error_message or '抱歉，系统遇到了一个未知错误。' }}
+                </p>
+            </div>
+            
+            <!-- 操作按钮 -->
+            <div class="space-y-3">
+                <button onclick="history.back()" 
+                        class="btn-primary w-full flex items-center justify-center space-x-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    <span>返回上一页</span>
+                </button>
+                
+                <a href="{{ url_for('index') }}" 
+                   class="btn-secondary w-full flex items-center justify-center space-x-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                    </svg>
+                    <span>返回首页</span>
+                </a>
+                
+                <button onclick="location.reload()" 
+                        class="text-gray-600 hover:text-gray-800 text-sm font-medium">
+                    刷新页面重试
+                </button>
+            </div>
+            
+            <!-- 帮助信息 -->
+            <div class="mt-8 text-sm text-gray-500">
+                <p>如果问题持续存在，请联系技术支持。</p>
+                <p class="mt-1">错误时间: {{ moment().format('YYYY-MM-DD HH:mm:ss') if moment else '刚刚' }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// 错误页面JavaScript逻辑
+(function() {
+    'use strict';
+    
+    // 自动报告错误（可选）
+    function reportError() {
+        // 这里可以实现错误自动报告功能
+        console.log('错误页面加载:', {
+            error_message: '{{ error_message }}',
+            timestamp: new Date().toISOString(),
+            user_agent: navigator.userAgent,
+            url: window.location.href
+        });
+    }
+    
+    // 页面加载完成后执行
+    document.addEventListener('DOMContentLoaded', function() {
+        reportError();
+    });
+    
+})();
+</script>
+{% endblock %}

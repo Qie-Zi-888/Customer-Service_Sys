@@ -1,0 +1,1095 @@
+[
+  {
+    "_comment": "---记录交互历史---",
+    "id": "conv_36af061e",
+    "user_id": "anonymous",
+    "messages": [
+      {
+        "id": "msg_986f3b38",
+        "timestamp": "2025-09-17T19:05:20.704091",
+        "role": "user",
+        "content": "??,????????"
+      },
+      {
+        "id": "msg_973cf08e",
+        "timestamp": "2025-09-17T19:05:21.153620",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：API请求失败 (状态码: 401)。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      }
+    ],
+    "created_at": "2025-09-17T19:05:20.704063",
+    "updated_at": "2025-09-17T19:05:21.154179"
+  },
+  {
+    "id": "conv_5584747b",
+    "user_id": "anonymous",
+    "messages": [
+      {
+        "id": "msg_2db99e89",
+        "timestamp": "2025-09-18T16:36:27.291975",
+        "role": "user",
+        "content": "你们的服务时间是什么？"
+      },
+      {
+        "id": "msg_04df6110",
+        "timestamp": "2025-09-18T16:36:27.707461",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：API请求失败 (状态码: 400)。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      },
+      {
+        "id": "msg_384b8cb3",
+        "timestamp": "2025-09-18T16:36:31.243263",
+        "role": "user",
+        "content": "如何联系人工客服？"
+      },
+      {
+        "id": "msg_4504b14e",
+        "timestamp": "2025-09-18T16:36:31.634909",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：API请求失败 (状态码: 400)。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      },
+      {
+        "id": "msg_aaee3a70",
+        "timestamp": "2025-09-18T16:36:38.851963",
+        "role": "user",
+        "content": "产品价格是多少？"
+      },
+      {
+        "id": "msg_e4433427",
+        "timestamp": "2025-09-18T16:36:39.229386",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：API请求失败 (状态码: 400)。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      },
+      {
+        "id": "msg_04449f9b",
+        "timestamp": "2025-09-18T16:36:42.114426",
+        "role": "user",
+        "content": "如何申请退款？"
+      },
+      {
+        "id": "msg_e127945d",
+        "timestamp": "2025-09-18T16:36:42.531738",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：API请求失败 (状态码: 400)。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      },
+      {
+        "id": "msg_12a98e14",
+        "timestamp": "2025-09-18T16:36:50.363290",
+        "role": "user",
+        "content": "你丫是谁"
+      },
+      {
+        "id": "msg_3343f952",
+        "timestamp": "2025-09-18T16:36:50.750266",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：API请求失败 (状态码: 400)。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      }
+    ],
+    "created_at": "2025-09-18T16:36:27.291947",
+    "updated_at": "2025-09-18T16:36:50.750390"
+  },
+  {
+    "id": "conv_b5d3ceab",
+    "user_id": "anonymous",
+    "messages": [
+      {
+        "id": "msg_1be7695c",
+        "timestamp": "2025-09-18T16:41:47.925925",
+        "role": "user",
+        "content": "你们的服务时间是什么？"
+      },
+      {
+        "id": "msg_c282c33e",
+        "timestamp": "2025-09-18T16:41:48.324067",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：API请求失败 (状态码: 400)。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      },
+      {
+        "id": "msg_230133d8",
+        "timestamp": "2025-09-18T16:41:50.065598",
+        "role": "user",
+        "content": "如何联系人工客服？"
+      },
+      {
+        "id": "msg_6897fc10",
+        "timestamp": "2025-09-18T16:41:50.492555",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：API请求失败 (状态码: 400)。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      },
+      {
+        "id": "msg_8c95cf98",
+        "timestamp": "2025-09-18T16:41:51.159746",
+        "role": "user",
+        "content": "产品价格是多少？"
+      },
+      {
+        "id": "msg_b7529f19",
+        "timestamp": "2025-09-18T16:41:51.575669",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：API请求失败 (状态码: 400)。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      },
+      {
+        "id": "msg_a39ff9c5",
+        "timestamp": "2025-09-18T16:41:53.047828",
+        "role": "user",
+        "content": "如何申请退款？"
+      },
+      {
+        "id": "msg_7f32208d",
+        "timestamp": "2025-09-18T16:41:53.575325",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：API请求失败 (状态码: 400)。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      },
+      {
+        "id": "msg_c5992657",
+        "timestamp": "2025-09-18T16:43:00.273727",
+        "role": "user",
+        "content": "你好"
+      },
+      {
+        "id": "msg_3d830149",
+        "timestamp": "2025-09-18T16:43:00.714454",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：API请求失败 (状态码: 400)。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      },
+      {
+        "id": "msg_7393027f",
+        "timestamp": "2025-09-18T16:47:06.330876",
+        "role": "user",
+        "content": "1"
+      },
+      {
+        "id": "msg_0e9a0444",
+        "timestamp": "2025-09-18T16:47:07.210075",
+        "role": "assistant",
+        "content": "您好！请问有什么问题需要解决吗？"
+      },
+      {
+        "id": "msg_5062bf21",
+        "timestamp": "2025-09-18T16:47:10.780706",
+        "role": "user",
+        "content": "你好"
+      },
+      {
+        "id": "msg_d8faac4d",
+        "timestamp": "2025-09-18T16:47:11.945513",
+        "role": "assistant",
+        "content": "您好！请问有什么问题或需要什么帮助吗？"
+      },
+      {
+        "id": "msg_6af643f8",
+        "timestamp": "2025-09-18T16:47:12.982381",
+        "role": "user",
+        "content": "你们的服务时间是什么？"
+      },
+      {
+        "id": "msg_2c666780",
+        "timestamp": "2025-09-18T16:47:14.530406",
+        "role": "assistant",
+        "content": "我们提供24小时在线服务。如有任何问题，随时可以咨询我们。"
+      },
+      {
+        "id": "msg_be5316f6",
+        "timestamp": "2025-09-18T16:47:15.926951",
+        "role": "user",
+        "content": "如何联系人工客服？"
+      },
+      {
+        "id": "msg_9ba67db4",
+        "timestamp": "2025-09-18T16:47:19.305828",
+        "role": "assistant",
+        "content": "您可以点击页面上的“联系客服”按钮，或在聊天界面直接留言，我们会尽快为您服务。"
+      },
+      {
+        "id": "msg_2635fcdf",
+        "timestamp": "2025-09-18T16:47:20.933050",
+        "role": "user",
+        "content": "产品价格是多少？"
+      },
+      {
+        "id": "msg_6cbf4f16",
+        "timestamp": "2025-09-18T16:47:22.126201",
+        "role": "assistant",
+        "content": "请告诉我您想了解的产品名称或型号，我会为您查询最新价格。"
+      },
+      {
+        "id": "msg_73c6a4c4",
+        "timestamp": "2025-09-18T16:47:24.277636",
+        "role": "user",
+        "content": "如何申请退款？"
+      },
+      {
+        "id": "msg_05003206",
+        "timestamp": "2025-09-18T16:47:41.613061",
+        "role": "assistant",
+        "content": "请登录您的账户，找到订单页面，点击“申请退款”按钮，按提示操作即可。如有疑问，可联系在线客服帮助您完成。"
+      }
+    ],
+    "created_at": "2025-09-18T16:41:47.925898",
+    "updated_at": "2025-09-18T16:47:41.613230"
+  },
+  {
+    "id": "conv_309bf500",
+    "user_id": "anonymous",
+    "messages": [
+      {
+        "id": "msg_69c68c1f",
+        "timestamp": "2025-09-26T16:00:52.631954",
+        "role": "user",
+        "content": "你丫是谁啊"
+      },
+      {
+        "id": "msg_49239e9f",
+        "timestamp": "2025-09-26T16:00:54.866948",
+        "role": "assistant",
+        "content": "您好，我是您的智能客服助手，很高兴为您提供帮助。如果您有任何问题，尽管告诉我。"
+      },
+      {
+        "id": "msg_87731875",
+        "timestamp": "2025-09-26T16:00:57.801056",
+        "role": "user",
+        "content": "你们的服务时间是什么？"
+      },
+      {
+        "id": "msg_b27623a1",
+        "timestamp": "2025-09-26T16:01:15.204684",
+        "role": "assistant",
+        "content": "我们的服务时间是全天24小时，7天无休。无论何时您有需求，都可以随时联系我们。"
+      }
+    ],
+    "created_at": "2025-09-26T16:00:52.631907",
+    "updated_at": "2025-09-26T16:01:15.205637"
+  },
+  {
+    "id": "conv_15171edb",
+    "user_id": "anonymous",
+    "messages": [
+      {
+        "id": "msg_acd4a152",
+        "timestamp": "2025-09-26T19:45:30.829512",
+        "role": "user",
+        "content": "你丫是谁啊"
+      },
+      {
+        "id": "msg_d85999a3",
+        "timestamp": "2025-09-26T19:45:48.711486",
+        "role": "assistant",
+        "content": "我是您的智能客服助手，可以帮您解决问题和提供信息。有什么问题需要帮助吗？"
+      },
+      {
+        "id": "msg_54c6bcc6",
+        "timestamp": "2025-09-26T19:47:11.321275",
+        "role": "user",
+        "content": "你们的服务时间是什么？"
+      },
+      {
+        "id": "msg_a726cf50",
+        "timestamp": "2025-09-26T19:47:13.961005",
+        "role": "assistant",
+        "content": "我们提供24小时服务，随时为您解答问题。需要帮助吗？"
+      },
+      {
+        "id": "msg_b892ba85",
+        "timestamp": "2025-09-26T19:58:01.481855",
+        "role": "user",
+        "content": "你好"
+      },
+      {
+        "id": "msg_7461f14b",
+        "timestamp": "2025-09-26T19:58:32.449573",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：请求超时，请稍后再试。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      }
+    ],
+    "created_at": "2025-09-26T19:45:30.829459",
+    "updated_at": "2025-09-26T19:58:32.450156"
+  },
+  {
+    "id": "conv_bb1ab0f0",
+    "user_id": "anonymous",
+    "messages": [
+      {
+        "id": "msg_c20c30dd",
+        "timestamp": "2025-10-15T18:29:09.321489",
+        "role": "user",
+        "content": "你们的服务时间是什么？"
+      },
+      {
+        "id": "msg_6bc36f34",
+        "timestamp": "2025-10-15T18:29:10.600399",
+        "role": "assistant",
+        "content": "我们的服务时间是从早上8点到晚上22点，全天为您服务。如有其他问题，欢迎随时咨询。"
+      },
+      {
+        "id": "msg_345ddebe",
+        "timestamp": "2025-10-15T18:29:16.358159",
+        "role": "user",
+        "content": "你丫是谁啊"
+      },
+      {
+        "id": "msg_b38c625a",
+        "timestamp": "2025-10-15T18:29:18.194945",
+        "role": "assistant",
+        "content": "我是您的智能客服助手，随时为您提供帮助。如果还有疑问，请告诉我。"
+      }
+    ],
+    "created_at": "2025-10-15T18:29:09.321452",
+    "updated_at": "2025-10-15T18:29:18.203989"
+  },
+  {
+    "id": "conv_0119fb92",
+    "user_id": "anonymous",
+    "messages": [
+      {
+        "id": "msg_0da1c775",
+        "timestamp": "2025-10-15T19:44:07.475064",
+        "role": "user",
+        "content": "你丫是谁啊"
+      },
+      {
+        "id": "msg_f43ee53a",
+        "timestamp": "2025-10-15T19:44:08.210722",
+        "role": "assistant",
+        "content": "我是您的智能客服助手，随时为您提供帮助。如果有问题或需求，请告诉我。"
+      },
+      {
+        "id": "msg_e9bee535",
+        "timestamp": "2025-10-15T19:44:11.532219",
+        "role": "user",
+        "content": "你们的服务时间是什么？"
+      },
+      {
+        "id": "msg_fd8acc6e",
+        "timestamp": "2025-10-15T19:44:12.272780",
+        "role": "assistant",
+        "content": "我们提供24小时在线服务，随时为您解答问题。无论何时有需要，都可以联系我。"
+      },
+      {
+        "id": "msg_82920686",
+        "timestamp": "2025-10-15T19:44:14.145384",
+        "role": "user",
+        "content": "如何联系人工客服？"
+      },
+      {
+        "id": "msg_3dfed3ab",
+        "timestamp": "2025-10-15T19:44:14.956138",
+        "role": "assistant",
+        "content": "您可以点击页面上的“联系客服”按钮，或者拨打客服热线，我们将尽快为您服务。"
+      },
+      {
+        "id": "msg_4ffcb04c",
+        "timestamp": "2025-10-15T19:57:29.721834",
+        "role": "user",
+        "content": "你好"
+      },
+      {
+        "id": "msg_fe44a43e",
+        "timestamp": "2025-10-15T19:57:30.717436",
+        "role": "assistant",
+        "content": "你好！很高兴为您服务。有什么问题需要帮忙吗？"
+      }
+    ],
+    "created_at": "2025-10-15T19:44:07.474965",
+    "updated_at": "2025-10-15T19:57:30.717925"
+  },
+  {
+    "id": "conv_8cd2951f",
+    "user_id": "anonymous",
+    "messages": [
+      {
+        "id": "msg_7ef54c6e",
+        "timestamp": "2025-11-26T14:58:13.603796",
+        "role": "user",
+        "content": "你们的服务时间是什么？"
+      },
+      {
+        "id": "msg_973c5c65",
+        "timestamp": "2025-11-26T14:58:15.175586",
+        "role": "assistant",
+        "content": "我们的服务时间为每日8:00至22:00。如有问题，欢迎在这个时间段内咨询。其他时间您可以选择在线留言，我们会尽快为您解答。"
+      },
+      {
+        "id": "msg_4670d681",
+        "timestamp": "2025-11-26T14:58:17.752577",
+        "role": "user",
+        "content": "如何联系人工客服？"
+      },
+      {
+        "id": "msg_acdb5d9a",
+        "timestamp": "2025-11-26T14:58:19.189018",
+        "role": "assistant",
+        "content": "您可以点击页面底部的“联系客服”按钮，选择“人工客服”进行咨询。或者拨打我们的客服热线：010-12345678，我们的客服代表将在第一时间为您提供帮助。"
+      },
+      {
+        "id": "msg_9d436bee",
+        "timestamp": "2025-11-26T14:58:29.362901",
+        "role": "user",
+        "content": "你丫谁啊"
+      },
+      {
+        "id": "msg_03f9285e",
+        "timestamp": "2025-11-26T14:58:31.455648",
+        "role": "assistant",
+        "content": "您好，我是您的智能客服助手，很高兴为您提供帮助。如果您有任何问题，请告诉我。"
+      }
+    ],
+    "created_at": "2025-11-26T14:58:13.603737",
+    "updated_at": "2025-11-26T14:58:31.456437"
+  },
+  {
+    "id": "conv_ecd54177",
+    "user_id": "anonymous",
+    "messages": [
+      {
+        "id": "msg_3cf04cd4",
+        "timestamp": "2025-11-26T19:44:21.339101",
+        "role": "user",
+        "content": "你丫是谁啊"
+      },
+      {
+        "id": "msg_7d584243",
+        "timestamp": "2025-11-26T19:44:22.701100",
+        "role": "assistant",
+        "content": "我是你的智能客服助手，可以帮你解答问题、提供信息或解决困惑。有什么我可以帮助的吗？"
+      },
+      {
+        "id": "msg_09626666",
+        "timestamp": "2025-11-26T19:44:26.960415",
+        "role": "user",
+        "content": "你们的服务时间是什么？"
+      },
+      {
+        "id": "msg_2499ead6",
+        "timestamp": "2025-11-26T19:44:28.232547",
+        "role": "assistant",
+        "content": "我们提供24小时服务，随时为您解答问题。无论什么时间，只要您有需要，都可以联系我。"
+      }
+    ],
+    "created_at": "2025-11-26T19:44:21.339046",
+    "updated_at": "2025-11-26T19:44:28.233104"
+  },
+  {
+    "id": "conv_a923a3cb",
+    "user_id": "anonymous",
+    "messages": [
+      {
+        "id": "msg_62b4f7b8",
+        "timestamp": "2026-04-20T10:42:44.347217",
+        "role": "user",
+        "content": "1"
+      },
+      {
+        "id": "msg_fddffe17",
+        "timestamp": "2026-04-20T10:42:44.574440",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：API请求失败 (状态码: 401)。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      },
+      {
+        "id": "msg_55e47972",
+        "timestamp": "2026-04-20T10:43:22.754047",
+        "role": "user",
+        "content": "如何联系人工客服？"
+      },
+      {
+        "id": "msg_9d74fe1a",
+        "timestamp": "2026-04-20T10:43:22.926449",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：API请求失败 (状态码: 401)。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      },
+      {
+        "id": "msg_3eaf9c24",
+        "timestamp": "2026-04-20T10:43:25.472393",
+        "role": "user",
+        "content": "产品价格是多少？"
+      },
+      {
+        "id": "msg_82304dcc",
+        "timestamp": "2026-04-20T10:43:25.655666",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：API请求失败 (状态码: 401)。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      },
+      {
+        "id": "msg_03b6f78f",
+        "timestamp": "2026-04-20T10:44:32.712319",
+        "role": "user",
+        "content": "如何联系人工客服？"
+      },
+      {
+        "id": "msg_b56d22ca",
+        "timestamp": "2026-04-20T10:44:32.876495",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：API请求失败 (状态码: 401)。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      },
+      {
+        "id": "msg_aacb0943",
+        "timestamp": "2026-04-20T10:44:44.303914",
+        "role": "user",
+        "content": "你们的服务时间是什么？"
+      },
+      {
+        "id": "msg_00d99f73",
+        "timestamp": "2026-04-20T10:44:44.457725",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：API请求失败 (状态码: 401)。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      },
+      {
+        "id": "msg_eafd8684",
+        "timestamp": "2026-04-20T10:47:06.404964",
+        "role": "user",
+        "content": "你们的服务时间是什么？"
+      },
+      {
+        "id": "msg_1d43702c",
+        "timestamp": "2026-04-20T10:47:06.607734",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：API请求失败 (状态码: 401)。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      },
+      {
+        "id": "msg_7b5f3c84",
+        "timestamp": "2026-04-20T10:48:45.744221",
+        "role": "user",
+        "content": "2"
+      },
+      {
+        "id": "msg_a6d870b5",
+        "timestamp": "2026-04-20T10:48:45.952029",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：API请求失败 (状态码: 401)。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      },
+      {
+        "id": "msg_79754715",
+        "timestamp": "2026-04-20T10:48:49.642561",
+        "role": "user",
+        "content": "如何联系人工客服？"
+      },
+      {
+        "id": "msg_6da345f4",
+        "timestamp": "2026-04-20T10:48:49.829472",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：API请求失败 (状态码: 401)。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      },
+      {
+        "id": "msg_f3f252d5",
+        "timestamp": "2026-04-20T10:48:56.193859",
+        "role": "user",
+        "content": "你们的服务时间是什么？"
+      },
+      {
+        "id": "msg_67d26843",
+        "timestamp": "2026-04-20T10:48:56.360518",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：API请求失败 (状态码: 401)。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      },
+      {
+        "id": "msg_221218f3",
+        "timestamp": "2026-04-20T10:48:57.753611",
+        "role": "user",
+        "content": "你们的服务时间是什么？"
+      },
+      {
+        "id": "msg_07ba743d",
+        "timestamp": "2026-04-20T10:48:57.982781",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：API请求失败 (状态码: 401)。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      },
+      {
+        "id": "msg_050277ab",
+        "timestamp": "2026-04-20T10:50:37.724904",
+        "role": "user",
+        "content": "如何联系人工客服？"
+      },
+      {
+        "id": "msg_32bf8c83",
+        "timestamp": "2026-04-20T10:50:38.745976",
+        "role": "assistant",
+        "content": "您可以点击页面顶部的“联系客服”按钮，或者在聊天界面直接留言，我们会尽快回复您。"
+      },
+      {
+        "id": "msg_26e895a1",
+        "timestamp": "2026-04-20T10:50:42.840246",
+        "role": "user",
+        "content": "1"
+      },
+      {
+        "id": "msg_f8bab925",
+        "timestamp": "2026-04-20T10:50:43.338433",
+        "role": "assistant",
+        "content": "您好！请提供更多详细信息，以便我帮助您解决问题。如果有具体问题或需求，请直接告诉我。"
+      },
+      {
+        "id": "msg_0ae4cb85",
+        "timestamp": "2026-04-20T10:50:47.994061",
+        "role": "user",
+        "content": "1+1=多少"
+      },
+      {
+        "id": "msg_0adde28e",
+        "timestamp": "2026-04-20T10:50:48.455678",
+        "role": "assistant",
+        "content": "1+1=2。如果您有其他数学问题或需要进一步解释，请告诉我。"
+      },
+      {
+        "id": "msg_7d987bd8",
+        "timestamp": "2026-04-20T16:01:48.592001",
+        "role": "user",
+        "content": "5+6"
+      },
+      {
+        "id": "msg_46559343",
+        "timestamp": "2026-04-20T16:01:50.558245",
+        "role": "assistant",
+        "content": "有1字。需要帮助吗？"
+      },
+      {
+        "id": "msg_c80fc477",
+        "timestamp": "2026-04-20T16:01:55.960282",
+        "role": "user",
+        "content": "5+6="
+      },
+      {
+        "id": "msg_a5d57bb3",
+        "timestamp": "2026-04-20T16:01:56.867241",
+        "role": "assistant",
+        "content": "结果是1+6=。有其他问题吗？"
+      },
+      {
+        "id": "msg_fca33a5b",
+        "timestamp": "2026-04-20T16:02:05.706140",
+        "role": "user",
+        "content": "5+6=多少"
+      },
+      {
+        "id": "msg_539b0ab2",
+        "timestamp": "2026-04-20T16:02:06.532980",
+        "role": "assistant",
+        "content": "结果是1166。有其他问题吗？"
+      },
+      {
+        "id": "msg_a8a31185",
+        "timestamp": "2026-04-20T16:02:28.127879",
+        "role": "user",
+        "content": "4+6等于几"
+      },
+      {
+        "id": "msg_1eb8c3cd",
+        "timestamp": "2026-04-20T16:02:28.593642",
+        "role": "assistant",
+        "content": "4+6等于10。有其他问题吗？"
+      },
+      {
+        "id": "msg_2d9d25e9",
+        "timestamp": "2026-04-20T16:02:36.858637",
+        "role": "user",
+        "content": "5+6=多少"
+      },
+      {
+        "id": "msg_f5151754",
+        "timestamp": "2026-04-20T16:02:37.557187",
+        "role": "assistant",
+        "content": "等于16。有其他问题吗？"
+      },
+      {
+        "id": "msg_c431176f",
+        "timestamp": "2026-04-20T17:16:16.303496",
+        "role": "user",
+        "content": "产品价格是多少？"
+      },
+      {
+        "id": "msg_ad61da58",
+        "timestamp": "2026-04-20T17:16:16.725278",
+        "role": "assistant",
+        "content": "请您提供产品的名称或编号，我帮您查询价格。"
+      },
+      {
+        "id": "msg_ed3ebe88",
+        "timestamp": "2026-04-20T17:16:23.543019",
+        "role": "user",
+        "content": "你是谁"
+      },
+      {
+        "id": "msg_808bba2d",
+        "timestamp": "2026-04-20T17:16:24.878758",
+        "role": "assistant",
+        "content": "我是您的智能客服助手，随时为您提供帮助。需要什么 assistance 请告诉我。"
+      },
+      {
+        "id": "msg_1b7ff0f9",
+        "timestamp": "2026-04-20T17:16:29.479879",
+        "role": "user",
+        "content": "如何申请退款？"
+      },
+      {
+        "id": "msg_978366cb",
+        "timestamp": "2026-04-20T17:16:30.147170",
+        "role": "assistant",
+        "content": "请登录您的账户，找到订单页面，选择您要退款的订单，点击申请退款按钮并按提示操作。如有疑问，可联系客服获取更详细指导。"
+      },
+      {
+        "id": "msg_70095260",
+        "timestamp": "2026-04-20T17:16:36.312675",
+        "role": "user",
+        "content": "怎么登录"
+      },
+      {
+        "id": "msg_bdbae46f",
+        "timestamp": "2026-04-20T17:16:37.571688",
+        "role": "assistant",
+        "content": "打开相关网站或APP，点击登录按钮，输入您的账号和密码，点击登录即可。如有问题，可联系客服获取帮助。"
+      },
+      {
+        "id": "msg_5effb3c9",
+        "timestamp": "2026-04-20T18:11:18.104240",
+        "role": "user",
+        "content": "我是谁"
+      },
+      {
+        "id": "msg_96b1200b",
+        "timestamp": "2026-04-20T18:11:18.573024",
+        "role": "assistant",
+        "content": "您是当前使用客服服务的用户。如果您忘记了账号信息，可以尝试找回密码或联系客服协助查询。"
+      },
+      {
+        "id": "msg_94764eb7",
+        "timestamp": "2026-04-20T18:16:56.705880",
+        "role": "user",
+        "content": "如何申请退款？"
+      },
+      {
+        "id": "msg_a3b92eb1",
+        "timestamp": "2026-04-20T18:16:58.160177",
+        "role": "assistant",
+        "content": "登录账户，找到订单页面，选择退款选项，按照提示操作填写相关信息提交即可。如有疑问，建议联系客服协助处理。"
+      },
+      {
+        "id": "msg_0514e4ca",
+        "timestamp": "2026-04-20T19:29:03.617822",
+        "role": "user",
+        "content": "如何申请退款？"
+      },
+      {
+        "id": "msg_a6abe4bc",
+        "timestamp": "2026-04-20T19:29:05.032864",
+        "role": "assistant",
+        "content": "登录账户，找到购买的订单，点击退款申请，按照提示填写相关信息提交。如有问题，可联系客服协助处理。"
+      },
+      {
+        "id": "msg_3219f0c4",
+        "timestamp": "2026-04-20T19:29:10.968080",
+        "role": "user",
+        "content": "5+2="
+      },
+      {
+        "id": "msg_9d42e1b9",
+        "timestamp": "2026-04-20T19:29:11.248778",
+        "role": "assistant",
+        "content": "5+2=7"
+      },
+      {
+        "id": "msg_857001c8",
+        "timestamp": "2026-04-20T19:29:17.249090",
+        "role": "user",
+        "content": "5+6="
+      },
+      {
+        "id": "msg_1fb157c1",
+        "timestamp": "2026-04-20T19:29:18.119140",
+        "role": "assistant",
+        "content": "请您提供具体问题或描述需求，我将更好地帮助您。"
+      },
+      {
+        "id": "msg_a6d908cc",
+        "timestamp": "2026-04-20T19:29:27.195698",
+        "role": "user",
+        "content": "5+6=多少"
+      },
+      {
+        "id": "msg_6a439bd7",
+        "timestamp": "2026-04-20T19:29:27.485346",
+        "role": "assistant",
+        "content": "5+6=11"
+      },
+      {
+        "id": "msg_91a97e7a",
+        "timestamp": "2026-04-20T19:30:04.384342",
+        "role": "user",
+        "content": "你Y是谁啊"
+      },
+      {
+        "id": "msg_fe250d9b",
+        "timestamp": "2026-04-20T19:30:05.119393",
+        "role": "assistant",
+        "content": "我是您的智能客服助手，随时为您提供帮助。"
+      },
+      {
+        "id": "msg_44c3e024",
+        "timestamp": "2026-04-20T19:30:12.970056",
+        "role": "user",
+        "content": "你能做什么"
+      },
+      {
+        "id": "msg_c0784bbe",
+        "timestamp": "2026-04-20T19:30:13.938608",
+        "role": "assistant",
+        "content": "我能回答问题、提供信息、解决常见问题，需要帮助吗？"
+      },
+      {
+        "id": "msg_67ea1cf9",
+        "timestamp": "2026-04-20T19:30:21.796519",
+        "role": "user",
+        "content": "详细一点"
+      },
+      {
+        "id": "msg_f82b0782",
+        "timestamp": "2026-04-20T19:30:22.289808",
+        "role": "assistant",
+        "content": "我可以回答问题、提供信息、协助解决问题、推荐解决方案、解释规则和政策等。请告诉我具体需要什么帮助。"
+      },
+      {
+        "id": "msg_4d9e6299",
+        "timestamp": "2026-04-20T19:30:41.217451",
+        "role": "user",
+        "content": "解决什么问题"
+      },
+      {
+        "id": "msg_d28841c7",
+        "timestamp": "2026-04-20T19:30:41.864274",
+        "role": "assistant",
+        "content": "我可以帮助你解决各种问题，比如查询信息、解答疑问、提供解决方案、解释规则政策、推荐产品或服务等。具体点告诉我你的问题，我会尽力帮助你。"
+      }
+    ],
+    "created_at": "2026-04-20T10:42:44.347217",
+    "updated_at": "2026-04-20T19:30:41.864783"
+  },
+  {
+    "id": "conv_adb67958",
+    "user_id": "anonymous",
+    "messages": [
+      {
+        "id": "msg_09d55c71",
+        "timestamp": "2026-04-29T10:30:20.662662",
+        "role": "user",
+        "content": "你们的服务时间是什么？"
+      },
+      {
+        "id": "msg_eb270aaf",
+        "timestamp": "2026-04-29T10:30:22.140049",
+        "role": "assistant",
+        "content": "我们的服务时间为周一至周五，早9918:00晚上，周末及节假日休息。如有特殊需求，建议您提前预约。"
+      },
+      {
+        "id": "msg_e9a22c5a",
+        "timestamp": "2026-04-29T10:30:27.964388",
+        "role": "user",
+        "content": "如何联系人工客服？"
+      },
+      {
+        "id": "msg_9f7a104c",
+        "timestamp": "2026-04-29T10:30:28.543183",
+        "role": "assistant",
+        "content": "您可以通过以下方式联系人工客服：拨打客服热线，发送电子邮件，或者在官网/APP上找到在线客服进行咨询。我们将尽快为您服务。"
+      },
+      {
+        "id": "msg_34fda842",
+        "timestamp": "2026-04-29T10:30:51.027989",
+        "role": "user",
+        "content": "1+1"
+      },
+      {
+        "id": "msg_128ff542",
+        "timestamp": "2026-04-29T10:30:51.441294",
+        "role": "assistant",
+        "content": "1+1等于2。如果您有其他数学问题，可以继续问我哦。"
+      }
+    ],
+    "created_at": "2026-04-29T10:30:20.662662",
+    "updated_at": "2026-04-29T10:30:51.442834"
+  },
+  {
+    "id": "conv_6a778682",
+    "user_id": "anonymous",
+    "messages": [
+      {
+        "id": "msg_d4500497",
+        "timestamp": "2026-07-08T16:51:03.107928",
+        "role": "user",
+        "content": "??"
+      },
+      {
+        "id": "msg_1296a552",
+        "timestamp": "2026-07-08T16:51:03.132008",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：网络连接失败，请检查网络。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      }
+    ],
+    "created_at": "2026-07-08T16:51:03.107928",
+    "updated_at": "2026-07-08T16:51:03.132463"
+  },
+  {
+    "id": "conv_1bcc6b8a",
+    "user_id": "anonymous",
+    "messages": [
+      {
+        "id": "msg_22dd3794",
+        "timestamp": "2026-07-08T16:51:18.164135",
+        "role": "user",
+        "content": "hello"
+      },
+      {
+        "id": "msg_5f4b7533",
+        "timestamp": "2026-07-08T16:51:18.185854",
+        "role": "assistant",
+        "content": "😔 抱歉，我现在遇到了一些技术问题：网络连接失败，请检查网络。\n\n🔄 请您稍后再试，或者联系我们的人工客服获得immediate帮助。\n📞 我们会尽快解决这个问题，感谢您的耐心理解！"
+      }
+    ],
+    "created_at": "2026-07-08T16:51:18.164135",
+    "updated_at": "2026-07-08T16:51:18.185854"
+  },
+  {
+    "id": "conv_51493d05",
+    "user_id": "anonymous",
+    "messages": [
+      {
+        "id": "msg_a2464ef1",
+        "timestamp": "2026-07-08T16:55:06.434558",
+        "role": "user",
+        "content": "hello"
+      }
+    ],
+    "created_at": "2026-07-08T16:55:06.434558",
+    "updated_at": "2026-07-08T16:55:06.434558"
+  },
+  {
+    "id": "conv_213a9715",
+    "user_id": "anonymous",
+    "messages": [
+      {
+        "id": "msg_5702539c",
+        "timestamp": "2026-07-08T16:55:18.167000",
+        "role": "user",
+        "content": "hello"
+      }
+    ],
+    "created_at": "2026-07-08T16:55:18.167000",
+    "updated_at": "2026-07-08T16:55:18.167000"
+  },
+  {
+    "id": "conv_a6707c1c",
+    "user_id": "anonymous",
+    "messages": [
+      {
+        "id": "msg_dcf89ef4",
+        "timestamp": "2026-07-08T16:56:48.778024",
+        "role": "user",
+        "content": "hello"
+      }
+    ],
+    "created_at": "2026-07-08T16:56:48.778024",
+    "updated_at": "2026-07-08T16:56:48.778024"
+  },
+  {
+    "id": "conv_6105d35a",
+    "user_id": "anonymous",
+    "messages": [
+      {
+        "id": "msg_483b44e1",
+        "timestamp": "2026-07-08T16:57:01.977442",
+        "role": "user",
+        "content": "hello"
+      }
+    ],
+    "created_at": "2026-07-08T16:57:01.977442",
+    "updated_at": "2026-07-08T16:57:01.977442"
+  },
+  {
+    "id": "conv_214031fe",
+    "user_id": "anonymous",
+    "messages": [
+      {
+        "id": "msg_32c53efb",
+        "timestamp": "2026-07-08T16:58:22.555419",
+        "role": "user",
+        "content": "hello"
+      }
+    ],
+    "created_at": "2026-07-08T16:58:22.555419",
+    "updated_at": "2026-07-08T16:58:22.555419"
+  },
+  {
+    "id": "conv_b65bc37d",
+    "user_id": "anonymous",
+    "messages": [
+      {
+        "id": "msg_300d13e7",
+        "timestamp": "2026-07-08T17:00:20.880922",
+        "role": "user",
+        "content": "hello"
+      }
+    ],
+    "created_at": "2026-07-08T17:00:20.879918",
+    "updated_at": "2026-07-08T17:00:20.880922"
+  },
+  {
+    "id": "conv_609c6f8d",
+    "user_id": "anonymous",
+    "messages": [
+      {
+        "id": "msg_66abaf6e",
+        "timestamp": "2026-07-08T17:00:33.568268",
+        "role": "user",
+        "content": "???????????"
+      },
+      {
+        "id": "msg_f53e2cc5",
+        "timestamp": "2026-07-08T17:00:34.242646",
+        "role": "assistant",
+        "content": "您好，请问有什么问题或需求可以帮助您的吗？"
+      }
+    ],
+    "created_at": "2026-07-08T17:00:33.568268",
+    "updated_at": "2026-07-08T17:00:34.253074"
+  },
+  {
+    "id": "conv_2a4830e1",
+    "user_id": "anonymous",
+    "messages": [
+      {
+        "id": "msg_ecf77198",
+        "timestamp": "2026-07-08T17:05:27.282221",
+        "role": "user",
+        "content": "1+1"
+      },
+      {
+        "id": "msg_b03220ba",
+        "timestamp": "2026-07-08T17:05:28.090194",
+        "role": "assistant",
+        "content": "请问您需要什么帮助？请尽量详细描述您的问题或需求。"
+      },
+      {
+        "id": "msg_85ec4865",
+        "timestamp": "2026-07-08T17:05:31.560741",
+        "role": "user",
+        "content": "5+6"
+      },
+      {
+        "id": "msg_8e92efa4",
+        "timestamp": "2026-07-08T17:05:32.882371",
+        "role": "assistant",
+        "content": "您好！请问的是手机号码吗？建议不要在公开场合透露个人隐私信息。如果遇到问题，可以告诉我具体是什么情况，我会尽力帮助您。"
+      },
+      {
+        "id": "msg_58c247aa",
+        "timestamp": "2026-07-08T17:05:34.948402",
+        "role": "user",
+        "content": "你们的服务时间是什么？"
+      },
+      {
+        "id": "msg_8abdcbd5",
+        "timestamp": "2026-07-08T17:05:36.795387",
+        "role": "assistant",
+        "content": "我们提供221222212211211211 pérdida的服务时间是每天9221122112221122211222115小时。如有其他问题，可以随时提问。"
+      }
+    ],
+    "created_at": "2026-07-08T17:05:27.282221",
+    "updated_at": "2026-07-08T17:05:36.795387"
+  }
+]

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}智能客服助手{% endblock %}</title>
+    
+    <!-- TailwindCSS CDN - 使用CDN简化部署 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 自定义样式配置 -->
+    <script>
+        // 配置TailwindCSS主题色彩
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2563eb',
+                        'primary-dark': '#1d4ed8',
+                        'secondary': '#6b7280',
+                        'success': '#10b981',
+                        'danger': '#ef4444',
+                        'warning': '#f59e0b'
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 1s infinite',
+                        'fade-in': 'fadeIn 0.3s ease-in-out',
+                        'slide-up': 'slideUp 0.3s ease-out'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- 自定义CSS样式 -->
+    <style>
+        /* 页脚固定到底部的 Flex 布局 */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
+        .main-content {
+            flex: 2;
+            height: 100%;
+        }
+        
+        /* 滚动条样式优化 */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 3px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        
+        /* 消息气泡动画 */
+        .message-bubble {
+            animation: slideUp 0.3s ease-out;
+        }
+        
+        /* 加载动画 */
+        .typing-indicator {
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #9ca3af;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+        
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        .typing-dot:nth-child(3) { animation-delay: 0s; }
+        
+        @keyframes typing {
+            0%, 80%, 100% {
+                transform: scale(0.8);
+                opacity: 0.5;
+            }
+            40% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        /* 按钮悬停效果 */
+        .btn-primary {
+            @apply bg-primary text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:bg-primary-dark hover:shadow-lg active:scale-95;
+        }
+        
+        .btn-secondary {
+            @apply bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:bg-gray-200 hover:shadow-md active:scale-95;
+        }
+        
+        /* 输入框样式 */
+        .input-field {
+            @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200;
+        }
+        
+        /* 卡片样式 */
+        .card {
+            @apply bg-white rounded-lg shadow-sm border border-gray-200 p-4;
+        }
+        
+        /* 响应式隐藏类 */
+        @media (max-width: 640px) {
+            .hide-mobile {
+                display: none;
+            }
+        }
+    </style>
+    
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <!-- 页面包装器 - Flex布局实现页脚底部固定 -->
+    <div class="page-wrapper">
+    <!-- 页面头部导航 -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo和标题 -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                        </svg>
+                    </div>
+                    <h1 class="text-xl font-bold text-gray-900">
+                        <a href="{{ url_for('index') }}" class="hover:text-primary transition-colors">
+                            智能客服助手
+                        </a>
+                    </h1>
+                </div>
+                
+                <!-- 导航菜单 -->
+                <nav class="flex items-center space-x-4">
+                    <a href="{{ url_for('index') }}" 
+                       class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors
+                              {% if request.endpoint == 'index' %}text-primary bg-blue-50{% endif %}">
+                        客服对话
+                    </a>
+                    <a href="{{ url_for('admin') }}" 
+                       class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors
+                              {% if request.endpoint == 'admin' %}text-primary bg-blue-50{% endif %}">
+                        管理后台
+                    </a>
+                    <a href="{{ url_for('health_check') }}" 
+                       class="text-gray-600 hover:text-success px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                        系统状态
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- 主要内容区域 -->
+    <main class="main-content {% block main_class %}max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6{% endblock %}" style="flex: 2; height: 100%; display: flex; flex-direction: column;">
+        <!-- Flash消息显示 -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="mb-6">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} mb-3 p-4 rounded-lg border animate-fade-in
+                                    {% if category == 'error' %}bg-red-50 border-red-200 text-red-700
+                                    {% elif category == 'warning' %}bg-yellow-50 border-yellow-200 text-yellow-700
+                                    {% elif category == 'success' %}bg-green-50 border-green-200 text-green-700
+                                    {% else %}bg-blue-50 border-blue-200 text-blue-700{% endif %}">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    {% if category == 'error' %}
+                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                                    {% elif category == 'warning' %}
+                                        <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                                    {% elif category == 'success' %}
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    {% else %}
+                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                                    {% endif %}
+                                </svg>
+                                {{ message }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        
+        <!-- 页面内容 -->
+        {% block content %}{% endblock %}
+    </main>
+    
+    <!-- 间隔区域 -->
+    <div style="background-color: #F9FAFB; height: 2rem;"></div>
+    
+    <!-- 页面底部 -->
+    <footer class="bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+            <div class="flex justify-between items-center text-sm text-gray-500">
+                <div>
+                    <p>&copy; 2026 智能客服助手. AI agent应用开发案例.</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span>技术栈: Python + Flask + AI</span>
+                    <span class="w-2 h-2 bg-success rounded-full animate-pulse" title="系统运行中"></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <!-- 页面包装器结束 -->
+    
+    <!-- 通用JavaScript工具函数 -->
+    <script>
+        // 通用工具函数
+        const Utils = {
+            // 显示加载状态
+            showLoading: function(element) {
+                if (element) {
+                    element.disabled = true;
+                    element.innerHTML = '<span class="typing-indicator"><span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span></span> 处理中...';
+                }
+            },
+            
+            // 隐藏加载状态
+            hideLoading: function(element, originalText) {
+                if (element) {
+                    element.disabled = false;
+                    element.innerHTML = originalText || '发送';
+                }
+            },
+            
+            // 显示提示消息
+            showMessage: function(message, type = 'info') {
+                const alertDiv = document.createElement('div');
+                alertDiv.className = `alert alert-${type} mb-3 p-4 rounded-lg border animate-fade-in fixed top-4 right-4 z-50 max-w-sm`;
+                
+                let bgColor, borderColor, textColor;
+                switch(type) {
+                    case 'error':
+                        bgColor = 'bg-red-50';
+                        borderColor = 'border-red-200';
+                        textColor = 'text-red-700';
+                        break;
+                    case 'success':
+                        bgColor = 'bg-green-50';
+                        borderColor = 'border-green-200';
+                        textColor = 'text-green-700';
+                        break;
+                    case 'warning':
+                        bgColor = 'bg-yellow-50';
+                        borderColor = 'border-yellow-200';
+                        textColor = 'text-yellow-700';
+                        break;
+                    default:
+                        bgColor = 'bg-blue-50';
+                        borderColor = 'border-blue-200';
+                        textColor = 'text-blue-700';
+                }
+                
+                alertDiv.className += ` ${bgColor} ${borderColor} ${textColor}`;
+                alertDiv.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <span>${message}</span>
+                        <button onclick="this.parentElement.parentElement.remove()" class="ml-2 text-gray-400 hover:text-gray-600">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
+                `;
+                
+                document.body.appendChild(alertDiv);
+                
+                // 3秒后自动消失
+                setTimeout(() => {
+                    if (alertDiv.parentElement) {
+                        alertDiv.remove();
+                    }
+                }, 3000);
+            },
+            
+            // 格式化时间
+            formatTime: function(timestamp) {
+                const date = new Date(timestamp);
+                return date.toLocaleTimeString('zh-CN', {
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+            },
+            
+            // 滚动到底部
+            scrollToBottom: function(element) {
+                if (element) {
+                    element.scrollTop = element.scrollHeight;
+                }
+            }
+        };
+        
+        // 全局错误处理
+        window.addEventListener('error', function(e) {
+            console.error('页面错误:', e.error);
+            Utils.showMessage('页面出现错误，请刷新重试', 'error');
+        });
+        
+        // 网络状态监听
+        window.addEventListener('online', function() {
+            Utils.showMessage('网络连接已恢复', 'success');
+        });
+        
+        window.addEventListener('offline', function() {
+            Utils.showMessage('网络连接已断开', 'warning');
+        });
+    </script>
+    
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

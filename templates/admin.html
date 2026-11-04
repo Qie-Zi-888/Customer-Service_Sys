@@ -1,0 +1,488 @@
+{% extends "base.html" %}
+
+{% block title %}管理后台 - 智能客服助手{% endblock %}
+
+{% block content %}
+<!-- 管理后台页面 -->
+<div class="space-y-6">
+    <!-- 页面标题 -->
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+        <div class="flex items-center justify-between">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-900">管理后台</h1>
+                <p class="text-gray-600 mt-1">查看对话记录、系统配置和运营数据</p>
+            </div>
+            <div class="flex items-center space-x-3">
+                <button onclick="refreshData()" 
+                        class="btn-secondary flex items-center space-x-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                    </svg>
+                    <span>刷新数据</span>
+                </button>
+                <a href="{{ url_for('index') }}" class="btn-primary flex items-center space-x-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                    </svg>
+                    <span>返回对话</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 统计数据卡片 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- 总对话数 -->
+        <div class="card">
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                    </svg>
+                </div>
+                <div class="ml-4">
+                    <p class="text-sm font-medium text-gray-600">总对话数</p>
+                    <p class="text-2xl font-bold text-gray-900">{{ stats.total_conversations }}</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 总消息数 -->
+        <div class="card">
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+                    </svg>
+                </div>
+                <div class="ml-4">
+                    <p class="text-sm font-medium text-gray-600">总消息数</p>
+                    <p class="text-2xl font-bold text-gray-900">{{ stats.total_messages }}</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 今日对话 -->
+        <div class="card">
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                </div>
+                <div class="ml-4">
+                    <p class="text-sm font-medium text-gray-600">今日对话</p>
+                    <p class="text-2xl font-bold text-gray-900">{{ stats.today_conversations }}</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 平均消息数 -->
+        <div class="card">
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                </div>
+                <div class="ml-4">
+                    <p class="text-sm font-medium text-gray-600">平均消息数</p>
+                    <p class="text-2xl font-bold text-gray-900">{{ stats.average_messages_per_conversation }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 主要内容区域 -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- 对话记录列表 -->
+        <div class="lg:col-span-2">
+            <div class="card">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-lg font-semibold text-gray-900">最近对话记录</h2>
+                    <div class="flex items-center space-x-2">
+                        <input type="date" 
+                               id="date-filter" 
+                               class="input-field text-sm"
+                               onchange="filterByDate(this.value)">
+                        <button onclick="exportConversations()" 
+                                class="btn-secondary text-sm">
+                            导出数据
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 对话列表 -->
+                <div class="space-y-3 max-h-96 overflow-y-auto custom-scrollbar" id="conversations-list">
+                    {% for conversation in conversations %}
+                    <div class="conversation-item border border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition-colors"
+                         data-conversation-id="{{ conversation.id }}"
+                         data-created-date="{{ conversation.created_at[:10] }}">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <span class="text-sm font-medium text-gray-900">对话 {{ conversation.id }}</span>
+                                    <span class="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded-full">
+                                        {{ conversation.messages|length }} 条消息
+                                    </span>
+                                </div>
+                                
+                                <!-- 显示最后一条消息 -->
+                                {% if conversation.messages %}
+                                    {% set last_message = conversation.messages[-1] %}
+                                    <p class="text-sm text-gray-600 line-clamp-2">
+                                        <span class="font-medium">
+                                            {% if last_message.role == 'user' %}用户{% else %}助手{% endif %}：
+                                        </span>
+                                        {{ last_message.content[:100] }}{% if last_message.content|length > 100 %}...{% endif %}
+                                    </p>
+                                {% endif %}
+                                
+                                <div class="flex items-center space-x-4 mt-2 text-xs text-gray-500">
+                                    <span>创建时间: {{ conversation.created_at[:16].replace('T', ' ') }}</span>
+                                    <span>更新时间: {{ conversation.updated_at[:16].replace('T', ' ') }}</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-2">
+                                <button onclick="viewConversation('{{ conversation.id }}')"
+                                        class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                                    查看详情
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                    {% if not conversations %}
+                    <div class="text-center py-8 text-gray-500">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                        </svg>
+                        <p>暂无对话记录</p>
+                        <p class="text-sm mt-1">用户开始对话后，记录将显示在这里</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <!-- 系统配置 -->
+        <div class="space-y-6">
+            <!-- 基本配置 -->
+            <div class="card">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">系统配置</h3>
+                
+                <form id="config-form" class="space-y-4">
+                    <!-- 欢迎消息 -->
+                    <div>
+                        <label for="welcome-message" class="block text-sm font-medium text-gray-700 mb-1">
+                            欢迎消息
+                        </label>
+                        <textarea id="welcome-message" 
+                                  name="welcome_message"
+                                  rows="3" 
+                                  class="input-field"
+                                  placeholder="输入欢迎消息...">{{ config.welcome_message }}</textarea>
+                    </div>
+                    
+                    <!-- AI模型配置 -->
+                    <div>
+                        <label for="ai-model" class="block text-sm font-medium text-gray-700 mb-1">
+                            AI模型
+                        </label>
+                        <select id="ai-model" name="ai_model" class="input-field">
+                            <option value="gpt-3.5-turbo" {% if config.ai_model == 'gpt-3.5-turbo' %}selected{% endif %}>GPT-3.5 Turbo</option>
+                            <option value="gpt-4" {% if config.ai_model == 'gpt-4' %}selected{% endif %}>GPT-4</option>
+                        </select>
+                    </div>
+                    
+                    <!-- 温度参数 -->
+                    <div>
+                        <label for="temperature" class="block text-sm font-medium text-gray-700 mb-1">
+                            创造性参数 ({{ config.temperature }})
+                        </label>
+                        <input type="range" 
+                               id="temperature" 
+                               name="temperature"
+                               min="0" 
+                               max="1" 
+                               step="0.1" 
+                               value="{{ config.temperature }}"
+                               class="w-full"
+                               oninput="updateTemperatureDisplay(this.value)">
+                        <div class="flex justify-between text-xs text-gray-500 mt-1">
+                            <span>保守</span>
+                            <span>平衡</span>
+                            <span>创新</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 最大回复长度 -->
+                    <div>
+                        <label for="max-tokens" class="block text-sm font-medium text-gray-700 mb-1">
+                            最大回复长度
+                        </label>
+                        <input type="number" 
+                               id="max-tokens" 
+                               name="max_tokens"
+                               min="50" 
+                               max="500" 
+                               value="{{ config.max_tokens }}"
+                               class="input-field">
+                    </div>
+                    
+                    <!-- 保存按钮 -->
+                    <button type="submit" class="btn-primary w-full">
+                        保存配置
+                    </button>
+                </form>
+            </div>
+            
+            <!-- 快捷问题管理 -->
+            <div class="card">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">快捷问题管理</h3>
+                
+                <div class="space-y-3" id="quick-questions-list">
+                    {% for question in config.quick_questions %}
+                    <div class="flex items-center space-x-2 quick-question-item">
+                        <input type="text" 
+                               value="{{ question }}" 
+                               class="input-field flex-1 text-sm"
+                               placeholder="输入快捷问题...">
+                        <button onclick="removeQuickQuestion(this)" 
+                                class="text-red-600 hover:text-red-800 p-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="mt-4 space-y-2">
+                    <button onclick="addQuickQuestion()" 
+                            class="btn-secondary w-full text-sm">
+                        + 添加快捷问题
+                    </button>
+                    <button onclick="saveQuickQuestions()" 
+                            class="btn-primary w-full text-sm">
+                        保存快捷问题
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 对话详情模态框 -->
+<div id="conversation-modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden z-50">
+    <div class="flex items-center justify-center min-h-screen p-4">
+        <div class="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-96 overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-semibold text-gray-900" id="modal-title">对话详情</h3>
+                    <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="px-6 py-4 overflow-y-auto custom-scrollbar" style="max-height: 400px;" id="modal-content">
+                <!-- 对话内容将在这里动态加载 -->
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// 管理后台页面JavaScript逻辑
+(function() {
+    'use strict';
+    
+    // 初始化
+    function init() {
+        console.log('管理后台页面初始化完成');
+    }
+    
+    // 刷新数据
+    window.refreshData = function() {
+        location.reload();
+    };
+    
+    // 按日期筛选对话
+    window.filterByDate = function(date) {
+        const items = document.querySelectorAll('.conversation-item');
+        
+        items.forEach(item => {
+            const createdDate = item.dataset.createdDate;
+            if (!date || createdDate === date) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    };
+    
+    // 查看对话详情
+    window.viewConversation = function(conversationId) {
+        // 这里可以实现查看对话详情的逻辑
+        document.getElementById('modal-title').textContent = `对话详情 - ${conversationId}`;
+        document.getElementById('modal-content').innerHTML = `
+            <div class="text-center py-8 text-gray-500">
+                <div class="typing-indicator mb-4">
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                </div>
+                <p>加载对话详情中...</p>
+            </div>
+        `;
+        document.getElementById('conversation-modal').classList.remove('hidden');
+        
+        // 模拟加载延迟
+        setTimeout(() => {
+            document.getElementById('modal-content').innerHTML = `
+                <div class="space-y-4">
+                    <p class="text-sm text-gray-600">对话ID: ${conversationId}</p>
+                    <p class="text-sm text-gray-500">详细的对话记录查看功能可以根据需要进一步开发。</p>
+                </div>
+            `;
+        }, 1000);
+    };
+    
+    // 关闭模态框
+    window.closeModal = function() {
+        document.getElementById('conversation-modal').classList.add('hidden');
+    };
+    
+    // 导出对话数据
+    window.exportConversations = function() {
+        Utils.showMessage('导出功能开发中...', 'info');
+    };
+    
+    // 更新温度参数显示
+    window.updateTemperatureDisplay = function(value) {
+        const label = document.querySelector('label[for="temperature"]');
+        label.textContent = `创造性参数 (${value})`;
+    };
+    
+    // 保存系统配置
+    document.getElementById('config-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const config = {
+            welcome_message: formData.get('welcome_message'),
+            ai_model: formData.get('ai_model'),
+            temperature: parseFloat(formData.get('temperature')),
+            max_tokens: parseInt(formData.get('max_tokens'))
+        };
+        
+        try {
+            const response = await fetch('/admin/config', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(config)
+            });
+            
+            const data = await response.json();
+            
+            if (data.success) {
+                Utils.showMessage('配置保存成功', 'success');
+            } else {
+                Utils.showMessage(data.error || '配置保存失败', 'error');
+            }
+        } catch (error) {
+            console.error('保存配置错误:', error);
+            Utils.showMessage('网络错误，请稍后再试', 'error');
+        }
+    });
+    
+    // 添加快捷问题
+    window.addQuickQuestion = function() {
+        const container = document.getElementById('quick-questions-list');
+        const div = document.createElement('div');
+        div.className = 'flex items-center space-x-2 quick-question-item';
+        div.innerHTML = `
+            <input type="text" 
+                   value="" 
+                   class="input-field flex-1 text-sm"
+                   placeholder="输入快捷问题...">
+            <button onclick="removeQuickQuestion(this)" 
+                    class="text-red-600 hover:text-red-800 p-1">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                </svg>
+            </button>
+        `;
+        container.appendChild(div);
+    };
+    
+    // 删除快捷问题
+    window.removeQuickQuestion = function(button) {
+        button.closest('.quick-question-item').remove();
+    };
+    
+    // 保存快捷问题
+    window.saveQuickQuestions = async function() {
+        const inputs = document.querySelectorAll('#quick-questions-list input');
+        const questions = Array.from(inputs)
+            .map(input => input.value.trim())
+            .filter(value => value.length > 0);
+        
+        try {
+            // 获取当前配置
+            const configResponse = await fetch('/admin/config');
+            const configData = await configResponse.json();
+            
+            if (configData.success) {
+                const updatedConfig = {
+                    ...configData.data,
+                    quick_questions: questions
+                };
+                
+                const response = await fetch('/admin/config', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(updatedConfig)
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    Utils.showMessage('快捷问题保存成功', 'success');
+                } else {
+                    Utils.showMessage(data.error || '快捷问题保存失败', 'error');
+                }
+            }
+        } catch (error) {
+            console.error('保存快捷问题错误:', error);
+            Utils.showMessage('网络错误，请稍后再试', 'error');
+        }
+    };
+    
+    // 点击模态框外部关闭
+    document.getElementById('conversation-modal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeModal();
+        }
+    });
+    
+    // 页面加载完成后初始化
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+    
+})();
+</script>
+{% endblock %}

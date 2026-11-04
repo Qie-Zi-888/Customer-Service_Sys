@@ -1,0 +1,365 @@
+{% extends "base.html" %}
+
+{% block title %}客服对话 - 智能客服助手{% endblock %}
+
+{% block main_class %}{% endblock %}
+
+{% block content %}
+<!-- 客服对话页面 - 填充整个 main-content 区域 -->
+<div class="flex flex-col bg-gray-50" style="height: 100%;">
+    <!-- 对话区域容器 -->
+    <div class="flex-1 flex flex-col max-w-4xl mx-auto w-full">
+        <!-- 对话头部信息 -->
+        <div class="bg-white shadow-sm border-b px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900">智能客服助手</h2>
+                        <p class="text-sm text-gray-500">我是您的专属AI助手，随时为您服务</p>
+                    </div>
+                </div>
+                
+                <!-- 在线状态指示器 -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 bg-success rounded-full animate-pulse"></div>
+                    <span class="text-sm text-gray-600">在线服务中</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 消息显示区域 -->
+        <div id="messages-container" class="flex-1 overflow-y-auto px-6 py-4 custom-scrollbar">
+            <!-- 欢迎消息 -->
+            <div class="flex justify-start mb-4">
+                <div class="max-w-xs lg:max-w-md">
+                    <div class="bg-white rounded-lg px-4 py-3 shadow-sm border border-gray-200 message-bubble">
+                        <div class="text-sm text-gray-800">
+                            {{ config.welcome_message }}
+                        </div>
+                        <div class="text-xs text-gray-500 mt-1">
+                            {{ moment().format('HH:mm') if moment else '刚刚' }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 历史消息显示 -->
+            {% for message in messages %}
+                {% if message.role == 'user' %}
+                    <!-- 用户消息 -->
+                    <div class="flex justify-end mb-4">
+                        <div class="max-w-xs lg:max-w-md">
+                            <div class="bg-primary text-white rounded-lg px-4 py-3 shadow-sm message-bubble">
+                                <div class="text-sm">
+                                    {{ message.content }}
+                                </div>
+                                <div class="text-xs text-blue-100 mt-1">
+                                    {{ message.timestamp[:16].replace('T', ' ') if message.timestamp else '刚刚' }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <!-- AI助手消息 -->
+                    <div class="flex justify-start mb-4">
+                        <div class="max-w-xs lg:max-w-md">
+                            <div class="bg-white rounded-lg px-4 py-3 shadow-sm border border-gray-200 message-bubble">
+                                <div class="text-sm text-gray-800">
+                                    {{ message.content }}
+                                </div>
+                                <div class="text-xs text-gray-500 mt-1">
+                                    {{ message.timestamp[:16].replace('T', ' ') if message.timestamp else '刚刚' }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            
+            <!-- 加载指示器 -->
+            <div id="loading-indicator" class="flex justify-start mb-4" style="display: none;">
+                <div class="max-w-xs lg:max-w-md">
+                    <div class="bg-white rounded-lg px-4 py-3 shadow-sm border border-gray-200">
+                        <div class="typing-indicator">
+                            <span class="typing-dot"></span>
+                            <span class="typing-dot"></span>
+                            <span class="typing-dot"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 滚动锚点 -->
+            <div id="messages-end"></div>
+        </div>
+        
+        <!-- 快捷问题区域 -->
+        {% if config.quick_questions %}
+        <div class="px-6 py-1.5 bg-white border-t border-gray-200">
+            <div class="mb-2">
+                <span class="text-sm text-gray-600 font-medium">常见问题：</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                {% for question in config.quick_questions %}
+                    <button onclick="sendQuickQuestion('{{ question }}')"
+                            class="px-3 py-1 text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full transition-all duration-200 hover:shadow-md active:scale-95">
+                        {{ question }}
+                    </button>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        
+        <!-- 消息输入区域 -->
+        <div class="bg-white border-t border-gray-200 px-6 py-6">
+            <form id="message-form" class="flex space-x-3">
+                <div class="flex-1">
+                    <input type="text" 
+                           id="message-input" 
+                           placeholder="请输入您的问题..."
+                           class="input-field h-14"
+                           maxlength="500"
+                           autocomplete="off">
+                    <div class="text-xs text-gray-500 mt-1">
+                        <span id="char-count">0</span>/500 字符
+                    </div>
+                </div>
+                <button type="submit" 
+                        id="send-button"
+                        class="btn-primary flex items-center space-x-2 px-6">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                    <span>发送</span>
+                </button>
+            </form>
+            
+            <!-- 输入提示 -->
+            <div class="mt-2 text-xs text-gray-500 flex items-center space-x-4">
+                <span>💡 提示：按 Enter 发送消息</span>
+                <span>🔒 您的对话内容将被安全保存</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// 客服对话页面JavaScript逻辑
+(function() {
+    'use strict';
+    
+    // DOM元素引用
+    const messageForm = document.getElementById('message-form');
+    const messageInput = document.getElementById('message-input');
+    const sendButton = document.getElementById('send-button');
+    const messagesContainer = document.getElementById('messages-container');
+    const loadingIndicator = document.getElementById('loading-indicator');
+    const charCount = document.getElementById('char-count');
+    const messagesEnd = document.getElementById('messages-end');
+    
+    // 对话ID（从会话中获取）
+    const conversationId = '{{ conversation_id }}';
+    
+    // 初始化
+    function init() {
+        // 绑定事件监听器
+        messageForm.addEventListener('submit', handleSubmit);
+        messageInput.addEventListener('input', updateCharCount);
+        messageInput.addEventListener('keypress', handleKeyPress);
+        
+        // 初始化字符计数
+        updateCharCount();
+        
+        // 滚动到底部
+        scrollToBottom();
+        
+        // 聚焦输入框
+        messageInput.focus();
+        
+        console.log('客服对话页面初始化完成');
+    }
+    
+    // 处理表单提交
+    function handleSubmit(e) {
+        e.preventDefault();
+        
+        const message = messageInput.value.trim();
+        if (!message) {
+            Utils.showMessage('请输入消息内容', 'warning');
+            return;
+        }
+        
+        sendMessage(message);
+    }
+    
+    // 处理键盘事件
+    function handleKeyPress(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            handleSubmit(e);
+        }
+    }
+    
+    // 更新字符计数
+    function updateCharCount() {
+        const count = messageInput.value.length;
+        charCount.textContent = count;
+        
+        // 字符数接近限制时改变颜色
+        if (count > 450) {
+            charCount.className = 'text-red-500 font-medium';
+        } else if (count > 400) {
+            charCount.className = 'text-yellow-500 font-medium';
+        } else {
+            charCount.className = '';
+        }
+    }
+    
+    // 发送消息
+    async function sendMessage(message) {
+        try {
+            // 显示用户消息
+            addMessage(message, 'user');
+            
+            // 清空输入框
+            messageInput.value = '';
+            updateCharCount();
+            
+            // 显示加载状态
+            showLoading();
+            
+            // 发送API请求
+            const response = await fetch('/send_message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    message: message,
+                    conversation_id: conversationId
+                })
+            });
+            
+            const data = await response.json();
+            
+            if (data.success) {
+                // 显示AI回复
+                addMessage(data.data.ai_response, 'assistant');
+            } else {
+                // 显示错误消息
+                Utils.showMessage(data.error || '发送消息失败', 'error');
+                addMessage('抱歉，我现在无法回复您的问题，请稍后再试。', 'assistant');
+            }
+            
+        } catch (error) {
+            console.error('发送消息错误:', error);
+            Utils.showMessage('网络错误，请检查网络连接', 'error');
+            addMessage('抱歉，网络连接出现问题，请稍后再试。', 'assistant');
+        } finally {
+            // 隐藏加载状态
+            hideLoading();
+        }
+    }
+    
+    // 添加消息到界面
+    function addMessage(content, role) {
+        const messageDiv = document.createElement('div');
+        const timestamp = new Date().toLocaleTimeString('zh-CN', {
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+        
+        if (role === 'user') {
+            messageDiv.className = 'flex justify-end mb-4';
+            messageDiv.innerHTML = `
+                <div class="max-w-xs lg:max-w-md">
+                    <div class="bg-primary text-white rounded-lg px-4 py-3 shadow-sm message-bubble">
+                        <div class="text-sm">${escapeHtml(content)}</div>
+                        <div class="text-xs text-blue-100 mt-1">${timestamp}</div>
+                    </div>
+                </div>
+            `;
+        } else {
+            messageDiv.className = 'flex justify-start mb-4';
+            messageDiv.innerHTML = `
+                <div class="max-w-xs lg:max-w-md">
+                    <div class="bg-white rounded-lg px-4 py-3 shadow-sm border border-gray-200 message-bubble">
+                        <div class="text-sm text-gray-800">${escapeHtml(content)}</div>
+                        <div class="text-xs text-gray-500 mt-1">${timestamp}</div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // 插入到加载指示器之前
+        messagesContainer.insertBefore(messageDiv, loadingIndicator);
+        
+        // 滚动到底部
+        scrollToBottom();
+    }
+    
+    // 显示加载状态
+    function showLoading() {
+        loadingIndicator.style.display = 'block';
+        sendButton.disabled = true;
+        sendButton.innerHTML = `
+            <div class="typing-indicator">
+                <span class="typing-dot"></span>
+                <span class="typing-dot"></span>
+                <span class="typing-dot"></span>
+            </div>
+            <span class="ml-2">发送中...</span>
+        `;
+        scrollToBottom();
+    }
+    
+    // 隐藏加载状态
+    function hideLoading() {
+        loadingIndicator.style.display = 'none';
+        sendButton.disabled = false;
+        sendButton.innerHTML = `
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+            </svg>
+            <span>发送</span>
+        `;
+        messageInput.focus();
+    }
+    
+    // 滚动到底部
+    function scrollToBottom() {
+        setTimeout(() => {
+            messagesEnd.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+    }
+    
+    // HTML转义函数
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+    
+    // 发送快捷问题
+    window.sendQuickQuestion = function(question) {
+        messageInput.value = question;
+        sendMessage(question);
+    };
+    
+    // 页面加载完成后初始化
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+    
+})();
+</script>
+{% endblock %}
